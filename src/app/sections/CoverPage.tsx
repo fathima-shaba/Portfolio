@@ -7,97 +7,56 @@ export default function CoverPageSection() {
   const [photoSrc, setPhotoSrc] = useState("/profile.jpg");
 
   return (
-    <section className="relative mx-auto w-full max-w-widest overflow-hidden">
-      <div className="relative mx-auto grid max-w-[1600px] grid-cols-1 md:grid-cols-2 md:items-center">
-        <div className="relative aspect-square max-h-[960px] max-w-[960px] overflow-visible md:mx-auto md:w-full w-full md:order-2 border-t md:border-t-0 md:border-l border-border-default">
-           <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
-           <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
-           <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
-           <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
-           
-           <div className="absolute inset-0 flex items-center justify-center p-roomy">
-              <div className="w-full h-full rounded-full overflow-hidden border border-border-default/50">
-                <img
-                  src={photoSrc}
-                  alt="Profile"
-                  onError={() => setPhotoSrc("/profile-placeholder.svg")}
-                  className="w-full h-full object-cover rounded-full filter grayscale hover:grayscale-0 transition-all duration-700"
-                />
-              </div>
-           </div>
-        </div>
-
-        <div className="flex flex-col gap-roomy items-stretch relative z-10 p-roomy md:order-1 border-t md:border-t-0 border-border-default h-full justify-center">
-          <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
-          <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
-          <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
-          <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
+    <section className="relative w-full overflow-hidden border-b border-border-default">
+      <div className="grid grid-cols-1 md:grid-cols-2 min-h-[90vh]">
+        
+        {/* Left Column */}
+        <div className="flex flex-col justify-between p-roomy md:p-12 lg:p-24 border-b md:border-b-0 md:border-r border-border-default relative">
           
-          <div className="flex flex-col gap-snug items-stretch">
-            <p className="text-xs font-medium uppercase tracking-widest text-text-faint mb-4">
-              Frontend Developer
-            </p>
-            <h1 className="text-5xl md:text-7xl font-semibold tracking-tight xl:text-[6rem] leading-[1.1] text-text-default">
+          <div className="flex flex-col items-start max-w-2xl">
+            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[9rem] font-bold tracking-tighter leading-[0.85] text-text-default uppercase mb-8">
               Fathima<br />Shaba
             </h1>
+            <p className="text-xl md:text-2xl leading-snug font-medium text-text-default mb-12 max-w-lg">
+              Brands, products & the art in between. I take the fun seriously.
+            </p>
+            
+            <div className="flex flex-wrap gap-2 mb-16">
+              {['Brand Design', 'Product Design', 'UX | UI', 'Art Direction', 'Motion & 3D'].map((skill, i) => (
+                <span key={i} className="inline-flex px-4 py-2 rounded-full border border-border-default text-xs font-semibold uppercase tracking-wider text-text-default bg-surface hover:bg-muted transition-colors">
+                  {skill}
+                </span>
+              ))}
+            </div>
+            
+            <div className="flex gap-4">
+              <a href="#about" className="btn-flat btn-flat-secondary group">
+                Enter The Lab <span className="ml-2 group-hover:translate-x-1 transition-transform">-&gt;</span>
+              </a>
+            </div>
           </div>
-          <p className="text-lg md:text-xl max-w-prose leading-relaxed text-text-muted mt-6">
-            I build polished, animated web experiences with React, modern CSS, and clean, responsive interfaces. Passionate about bringing elegant designs to life.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-start items-center mt-8">
-            <a href="mailto:fathimashaba674@gmail.com" className="btn-flat btn-flat-primary">
-              Let&apos;s talk
-            </a>
-            <a href="#about" className="btn-flat btn-flat-secondary">
-              View Work
-            </a>
+          
+          <div className="absolute top-0 right-0 p-6 hidden md:block">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-text-muted">(PORTFOLIO 2026)</span>
+          </div>
+          <div className="absolute bottom-0 left-0 p-6 md:p-12 lg:p-24 hidden md:block">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-text-muted">(SCROLL TO EXPLORE)</span>
           </div>
         </div>
-      </div>
-      
-      <div className="mx-auto w-full max-w-[1600px]">
-        <div className="grid grid-cols-2 md:grid-cols-4">
-          <div className="relative flex flex-col items-start gap-cozy p-roomy border-t border-border-default">
-            <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
-            <p className="min-h-[2lh] md:min-h-0 text-xs font-medium uppercase tracking-widest text-text-faint">Projects Built</p>
-            <p className="text-4xl md:text-5xl font-semibold tracking-tighter tabular-nums leading-none text-text-default">
-              15<span className="text-text-faint text-3xl ml-1">+</span>
-            </p>
-          </div>
-          <div className="relative flex flex-col items-start gap-cozy p-roomy border-t md:border-l border-border-default">
-            <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
-            <p className="min-h-[2lh] md:min-h-0 text-xs font-medium uppercase tracking-widest text-text-faint">Technologies</p>
-            <p className="text-4xl md:text-5xl font-semibold tracking-tighter tabular-nums leading-none text-text-default">
-              12<span className="text-text-faint text-3xl ml-1">+</span>
-            </p>
-          </div>
-          <div className="relative flex flex-col items-start gap-cozy p-roomy border-t md:border-l border-border-default">
-            <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
-            <p className="min-h-[2lh] md:min-h-0 text-xs font-medium uppercase tracking-widest text-text-faint">Code Commits</p>
-            <p className="text-4xl md:text-5xl font-semibold tracking-tighter tabular-nums leading-none text-text-default">
-              500<span className="text-text-faint text-3xl ml-1">+</span>
-            </p>
-          </div>
-          <div className="relative flex flex-col items-start gap-cozy p-roomy border-t md:border-l border-border-default">
-            <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
-            <p className="min-h-[2lh] md:min-h-0 text-xs font-medium uppercase tracking-widest text-text-faint">Passion</p>
-            <p className="text-4xl md:text-5xl font-semibold tracking-tighter tabular-nums leading-none text-text-default">
-              100<span className="text-text-faint text-3xl ml-1">%</span>
-            </p>
+
+        {/* Right Column (Image) */}
+        <div className="relative h-[60vh] md:h-auto w-full bg-muted overflow-hidden group">
+          <img
+            src={photoSrc}
+            alt="Profile Portrait"
+            onError={() => setPhotoSrc("/profile-placeholder.svg")}
+            className="absolute inset-0 w-full h-full object-cover object-center filter grayscale contrast-125 brightness-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1.5s] ease-out"
+          />
+          <div className="absolute top-0 left-0 p-6 md:p-12">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-white mix-blend-difference">(PROFILE)</span>
           </div>
         </div>
+        
       </div>
     </section>
   );

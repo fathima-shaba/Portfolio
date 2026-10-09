@@ -10,18 +10,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        surface: "#09090b",
-        muted: "#18181b",
-        "on-muted": "#a1a1aa",
-        "text-default": "#fafafa",
-        "text-muted": "#a1a1aa",
-        "text-faint": "#52525b",
-        "border-default": "#27272a",
-        "border-strong": "#3f3f46",
-        primary: "#fafafa",
-        "primary-subtle": "#27272a",
-        accent: "#3b82f6",
-        "accent-glow": "rgba(59, 130, 246, 0.5)",
+        surface: "#EBEBEB",
+        "surface-dark": "#0D0D0D",
+        muted: "#E1E1E1",
+        "muted-dark": "#1A1A1A",
+        "text-default": "#000000",
+        "text-dark": "#FFFFFF",
+        "text-muted": "#555555",
+        "text-muted-dark": "#A0A0A0",
+        "border-default": "#D1D1D1",
+        "border-dark": "#333333",
+        accent: "#D03B2B",
       },
       spacing: {
         cozy: "1rem",
@@ -41,28 +40,6 @@ module.exports = {
       },
       borderRadius: {
         field: "9999px",
-      },
-      animation: {
-        "blob": "blob 7s infinite",
-        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "shimmer": "shimmer 2s linear infinite",
-        "float": "float 6s ease-in-out infinite",
-      },
-      keyframes: {
-        blob: {
-          "0%": { transform: "translate(0px, 0px) scale(1)" },
-          "33%": { transform: "translate(30px, -50px) scale(1.1)" },
-          "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
-          "100%": { transform: "translate(0px, 0px) scale(1)" },
-        },
-        shimmer: {
-          from: { backgroundPosition: "200% 0" },
-          to: { backgroundPosition: "-200% 0" },
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
-        }
       }
     },
   },

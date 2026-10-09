@@ -5,7 +5,7 @@
 @layer base {
   html {
     @apply scroll-smooth;
-    color-scheme: dark;
+    color-scheme: light dark;
   }
 
   body {
@@ -18,29 +18,49 @@
 }
 
 @layer utilities {
-  .bg-grid-pattern {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
+  .inverted-section {
+    @apply bg-surface-dark text-text-dark border-border-dark;
   }
   
-  .glass-panel {
-    @apply bg-surface/50 backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  .inverted-section .border-border-default {
+    @apply border-border-dark;
+  }
+  
+  .inverted-section .text-text-default {
+    @apply text-text-dark;
+  }
+  
+  .inverted-section .text-text-muted {
+    @apply text-text-muted-dark;
   }
 
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-300 to-slate-500;
+  .inverted-section .bg-surface {
+    @apply bg-surface-dark;
+  }
+
+  .inverted-section .bg-muted {
+    @apply bg-muted-dark;
   }
 }
 
 @layer components {
   .btn-flat {
-    @apply inline-flex items-center justify-center rounded-field font-semibold cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface h-12 px-6 text-sm gap-snug;
+    @apply inline-flex items-center justify-center rounded-field font-semibold cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-text-default focus-visible:ring-offset-2 focus-visible:ring-offset-surface h-12 px-6 text-sm gap-snug border border-text-default;
   }
   .btn-flat-primary {
-    @apply bg-text-default text-surface hover:bg-slate-200 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105;
+    @apply bg-text-default text-surface hover:bg-transparent hover:text-text-default;
   }
   .btn-flat-secondary {
-    @apply bg-transparent text-text-default border border-border-strong hover:bg-white/5 hover:border-white/20 hover:scale-105;
+    @apply bg-transparent text-text-default hover:bg-text-default hover:text-surface;
+  }
+  
+  .inverted-section .btn-flat {
+    @apply border-text-dark;
+  }
+  .inverted-section .btn-flat-primary {
+    @apply bg-text-dark text-surface-dark hover:bg-transparent hover:text-text-dark;
+  }
+  .inverted-section .btn-flat-secondary {
+    @apply bg-transparent text-text-dark hover:bg-text-dark hover:text-surface-dark;
   }
 }
