@@ -4,30 +4,45 @@ import { motion } from "framer-motion";
 
 export default function VisionMissionSection() {
   return (
-    <section className="mx-auto w-full max-w-[1600px]" id="vision-mission">
-      <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="relative flex flex-col items-start gap-cozy p-roomy border-t md:border-t border-border-default">
-            <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
-            <p className="text-xs font-medium uppercase tracking-widest text-text-faint mb-2">Goal</p>
-            <h3 className="text-3xl font-semibold text-text-default mb-2">Vision</h3>
-            <p className="text-base text-text-muted leading-relaxed">
-              To build elegant digital experiences that help people connect with ideas, products, and careers in a meaningful way.
-            </p>
+    <section className="bg-white py-24" id="vision-mission">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <div className="flex flex-col md:flex-row gap-12 lg:gap-24">
+          
+          <div className="w-full md:w-1/3">
+            <h2 className="text-3xl md:text-5xl font-black text-black uppercase tracking-tight">Vision <br/>& Mission</h2>
+            <div className="w-12 h-1 bg-orange-500 mt-6"></div>
+          </div>
+
+          <div className="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8"
+            >
+              <h3 className="text-xl font-bold text-black uppercase tracking-wide mb-4">Vision</h3>
+              <p className="text-gray-500 leading-relaxed">
+                To build elegant digital experiences that help people connect with ideas, products, and careers in a meaningful way. I envision a web that is fast, accessible, and beautifully designed.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8"
+            >
+              <h3 className="text-xl font-bold text-black uppercase tracking-wide mb-4">Mission</h3>
+              <p className="text-gray-500 leading-relaxed">
+                To deliver polished interfaces that are accessible, responsive, and thoughtfully coded. I strive to continuously learn new technologies and apply them to solve real-world problems.
+              </p>
+            </motion.div>
+          </div>
+
         </div>
-        <div className="relative flex flex-col items-start gap-cozy p-roomy border-t md:border-t md:border-l border-border-default">
-            <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
-            <p className="text-xs font-medium uppercase tracking-widest text-text-faint mb-2">Objective</p>
-            <h3 className="text-3xl font-semibold text-text-default mb-2">Mission</h3>
-            <p className="text-base text-text-muted leading-relaxed">
-              To deliver polished interfaces that are accessible, responsive, and thoughtfully coded for a better web experience.
-            </p>
-        </div>
+
       </div>
     </section>
   );

@@ -1,61 +1,99 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function ExperienceSection() {
   const projects = [
-    { title: "Rise", role: "Frontend · Product · Marketing", timeline: "17 Months", year: "2025-2026", team: "In-House Studio" },
-    { title: "Figcoms", role: "Frontend & Product Design", timeline: "4 Months", year: "2025", team: "Co-Founder" },
-    { title: "iMotion", role: "Frontend & Product Designer", timeline: "3 Months", year: "2025", team: "Co-founded studio" },
-    { title: "Portfolio System", role: "Architecture Design", timeline: "Ongoing", year: "2026", team: "Solo (external)" }
+    {
+      title: "Multi-Vendor E-Commerce Website",
+      description: "A comprehensive multi-vendor platform providing a seamless online shopping experience. Features include complete product listings, shopping cart, user authentication, and product management all within a highly responsive UI.",
+      image: "/images/projects/ecommerce-showcase.png",
+      tags: ["React", "Node.js", "Tailwind CSS"],
+      github: "https://github.com/fathima-shaba",
+      live: "#"
+    },
+    {
+      title: "Retreat Hostel Website",
+      description: "A welcoming, premium website developed for Retreat hostel. Showcases the hostel's modern design, responsive accommodation layouts, and essential information in an elegant, hospitality-focused interface.",
+      image: "/images/projects/retreat-hostel-showcase.png",
+      tags: ["HTML", "CSS", "JavaScript", "React"],
+      github: "https://github.com/fathima-shaba",
+      live: "#"
+    },
+    {
+      title: "TRP Dress Brand Website",
+      description: "A sophisticated fashion e-commerce storefront for TRP. Features a clean, brand-focused identity with stylish product presentations, responsive grids, and a premium editorial shopping aesthetic.",
+      image: "/images/projects/trp-fashion-showcase.png",
+      tags: ["React", "Tailwind CSS", "JavaScript"],
+      github: "https://github.com/fathima-shaba",
+      live: "#"
+    }
   ];
 
   return (
-    <section className="w-full bg-surface px-6 md:px-12 lg:px-24 py-12 md:py-24" id="work">
-      <div className="max-w-[1600px] mx-auto">
+    <section className="bg-gray-50 py-24 border-y border-gray-100" id="experience">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        <div className="flex justify-between items-center mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest text-text-muted">(CLIENTS & COLLABORATIONS)</span>
+        {/* Title */}
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div>
+            <h2 className="text-3xl md:text-5xl font-black text-black uppercase tracking-tight">Featured <br/>Projects</h2>
+            <div className="w-12 h-1 bg-orange-500 mt-6"></div>
+          </div>
+          <p className="text-gray-500 max-w-md md:text-right">
+            A showcase of my recent professional work, featuring clean design, robust architecture, and responsive user experiences.
+          </p>
         </div>
-        
-        <div className="flex flex-col border-t border-border-default">
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects">
+          
           {projects.map((project, index) => (
-            <div key={index} className="group relative flex flex-col lg:flex-row justify-between items-start lg:items-center py-8 lg:py-12 border-b border-border-default hover:bg-muted transition-colors px-4 -mx-4 cursor-pointer">
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300"
+            >
+              <div className="w-full h-56 relative overflow-hidden bg-gray-100">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
               
-              <div className="flex-1 min-w-[200px] mb-6 lg:mb-0">
-                <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-text-default group-hover:text-accent transition-colors">
-                  {project.title}
-                </h3>
+              <div className="p-8 flex flex-col flex-grow">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map(tag => (
+                    <span key={tag} className="px-2 py-1 bg-gray-50 text-gray-700 border border-gray-200 text-[10px] font-bold uppercase tracking-widest rounded">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <h3 className="text-xl font-black text-black uppercase tracking-wide mb-3">{project.title}</h3>
+                <p className="text-sm text-gray-500 mb-8 flex-grow leading-relaxed">
+                  {project.description}
+                </p>
                 
-                <div className="mt-4 opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto overflow-hidden transition-all duration-300">
-                   <a href="#" className="btn-flat btn-flat-secondary inline-flex text-xs">
-                     Jump To Project <span className="ml-2">-&gt;</span>
-                   </a>
+                <div className="flex items-center gap-4 mt-auto">
+                  <a href={project.live} className="text-[10px] font-black text-white bg-black px-6 py-3 rounded uppercase tracking-widest hover:bg-gray-800 transition-colors">
+                    View Project
+                  </a>
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-black border border-gray-200 px-6 py-3 rounded uppercase tracking-widest hover:bg-gray-50 transition-colors">
+                    GitHub
+                  </a>
                 </div>
               </div>
-              
-              <div className="flex-1 grid grid-cols-2 md:grid-cols-4 w-full gap-4 lg:gap-8 opacity-70 group-hover:opacity-100 transition-opacity">
-                 <div className="flex flex-col gap-2">
-                   <span className="text-[10px] font-bold uppercase tracking-widest text-text-muted">(ROLE)</span>
-                   <span className="text-sm font-semibold">{project.role}</span>
-                 </div>
-                 <div className="flex flex-col gap-2">
-                   <span className="text-[10px] font-bold uppercase tracking-widest text-text-muted">(TIMELINE)</span>
-                   <span className="text-sm font-semibold">{project.timeline}</span>
-                 </div>
-                 <div className="flex flex-col gap-2">
-                   <span className="text-[10px] font-bold uppercase tracking-widest text-text-muted">(YEAR)</span>
-                   <span className="text-sm font-semibold">{project.year}</span>
-                 </div>
-                 <div className="flex flex-col gap-2">
-                   <span className="text-[10px] font-bold uppercase tracking-widest text-text-muted">(TEAM)</span>
-                   <span className="text-sm font-semibold">{project.team}</span>
-                 </div>
-              </div>
-              
-            </div>
+            </motion.div>
           ))}
+
         </div>
+
       </div>
     </section>
   );

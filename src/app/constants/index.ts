@@ -9,8 +9,9 @@ import {
   FaPhone,
   FaMapMarkerAlt,
 } from "react-icons/fa";
-import { SiJava, SiCplusplus, SiVisualstudiocode } from "react-icons/si";
+import { SiCplusplus } from "react-icons/si";
 import { TbBrandNextjs, TbBrandTailwind } from "react-icons/tb";
+import { FaCode } from "react-icons/fa";
 
 export const NAVIGATION_ITEMS: NavItem[] = [
   { label: "About", href: "#about" },
@@ -26,9 +27,9 @@ export const SKILLS: SkillItem[] = [
   { name: "Next.js", icon: TbBrandNextjs, color: "text-slate-900" },
   { name: "HTML5", icon: FaHtml5, color: "text-orange-500" },
   { name: "CSS3", icon: FaCss3Alt, color: "text-blue-400" },
-  { name: "Java", icon: SiJava, color: "text-red-600" },
+  { name: "Java", icon: FaCode, color: "text-red-600" },
   { name: "C++", icon: SiCplusplus, color: "text-slate-500" },
-  { name: "VS Code", icon: SiVisualstudiocode, color: "text-cyan-500" },
+  { name: "VS Code", icon: FaCode, color: "text-cyan-500" },
   { name: "Tailwind", icon: TbBrandTailwind, color: "text-cyan-500" },
 ];
 

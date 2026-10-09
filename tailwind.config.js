@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        surface: "#EBEBEB",
+        surface: "#FFFFFF",
         "surface-dark": "#0D0D0D",
         muted: "#E1E1E1",
         "muted-dark": "#1A1A1A",

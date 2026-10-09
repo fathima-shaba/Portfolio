@@ -4,36 +4,32 @@ import { motion } from "framer-motion";
 
 export default function EducationSection() {
   return (
-    <section className="mx-auto w-full max-w-[1600px]" id="education">
-      <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="relative flex flex-col items-start gap-cozy p-roomy border-t border-border-default">
-            <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
-            <div className="flex flex-col gap-1 w-full mb-4">
-              <span className="text-xs font-medium uppercase tracking-widest text-text-faint mb-2">Education</span>
-              <span className="text-xl font-semibold text-text-default">Calicut University</span>
-            </div>
-            <p className="text-sm text-text-muted mb-2 font-semibold">Bachelor of Computer Science</p>
-            <p className="text-sm text-text-muted leading-relaxed">
-              Ongoing coursework in software development, data structures, and web technologies.
-            </p>
+    <section className="bg-gray-50 py-24 border-y border-gray-100" id="education">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-black text-black uppercase tracking-tight">Education</h2>
+          <div className="w-12 h-1 bg-orange-500 mx-auto mt-6"></div>
         </div>
-        <div className="relative flex flex-col items-start gap-cozy p-roomy border-t md:border-l border-border-default">
-            <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
-            <div className="flex flex-col gap-1 w-full mb-4">
-              <span className="text-xs font-medium uppercase tracking-widest text-text-faint mb-2">Specialization</span>
-              <span className="text-xl font-semibold text-text-default">Web Development</span>
+
+        <div className="max-w-3xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
+          >
+            <div>
+              <p className="text-xs font-bold text-orange-500 uppercase tracking-widest mb-2">2021 - 2024</p>
+              <h3 className="text-2xl font-black text-black uppercase tracking-wide mb-2">B.Sc. Computer Science</h3>
+              <p className="text-lg text-gray-700 font-medium mb-2">Calicut University</p>
+              <p className="text-gray-500">
+                Focused on software engineering, databases, data structures, and modern web development technologies.
+              </p>
             </div>
-            <p className="text-sm text-text-muted mb-2 font-semibold">React, JavaScript, HTML, CSS</p>
-            <p className="text-sm text-text-muted leading-relaxed">
-              Practical projects focused on responsive, user-first frontends.
-            </p>
+          </motion.div>
         </div>
+
       </div>
     </section>
   );

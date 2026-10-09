@@ -1,62 +1,97 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function CoverPageSection() {
-  const [photoSrc, setPhotoSrc] = useState("/profile.jpg");
-
   return (
-    <section className="relative w-full overflow-hidden border-b border-border-default">
-      <div className="grid grid-cols-1 md:grid-cols-2 min-h-[90vh]">
+    <section className="relative w-full bg-white pt-8 pb-20 overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         
-        {/* Left Column */}
-        <div className="flex flex-col justify-between p-roomy md:p-12 lg:p-24 border-b md:border-b-0 md:border-r border-border-default relative">
-          
-          <div className="flex flex-col items-start max-w-2xl">
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[9rem] font-bold tracking-tighter leading-[0.85] text-text-default uppercase mb-8">
-              Fathima<br />Shaba
-            </h1>
-            <p className="text-xl md:text-2xl leading-snug font-medium text-text-default mb-12 max-w-lg">
-              Brands, products & the art in between. I take the fun seriously.
-            </p>
-            
-            <div className="flex flex-wrap gap-2 mb-16">
-              {['Brand Design', 'Product Design', 'UX | UI', 'Art Direction', 'Motion & 3D'].map((skill, i) => (
-                <span key={i} className="inline-flex px-4 py-2 rounded-full border border-border-default text-xs font-semibold uppercase tracking-wider text-text-default bg-surface hover:bg-muted transition-colors">
-                  {skill}
-                </span>
-              ))}
-            </div>
-            
-            <div className="flex gap-4">
-              <a href="#about" className="btn-flat btn-flat-secondary group">
-                Enter The Lab <span className="ml-2 group-hover:translate-x-1 transition-transform">-&gt;</span>
-              </a>
-            </div>
-          </div>
-          
-          <div className="absolute top-0 right-0 p-6 hidden md:block">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-text-muted">(PORTFOLIO 2026)</span>
-          </div>
-          <div className="absolute bottom-0 left-0 p-6 md:p-12 lg:p-24 hidden md:block">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-text-muted">(SCROLL TO EXPLORE)</span>
-          </div>
+        {/* HUGE "DEVELOPER" Heading */}
+        <div className="w-full text-center relative z-0 flex justify-center">
+          <h1 className="text-[16vw] md:text-[14vw] font-black tracking-tighter text-black uppercase leading-none select-none">
+            DEVELOPER
+          </h1>
         </div>
 
-        {/* Right Column (Image) */}
-        <div className="relative h-[60vh] md:h-auto w-full bg-muted overflow-hidden group">
-          <img
-            src={photoSrc}
-            alt="Profile Portrait"
-            onError={() => setPhotoSrc("/profile-placeholder.svg")}
-            className="absolute inset-0 w-full h-full object-cover object-center filter grayscale contrast-125 brightness-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1.5s] ease-out"
-          />
-          <div className="absolute top-0 left-0 p-6 md:p-12">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-white mix-blend-difference">(PROFILE)</span>
+        {/* Main Content Layout overlapping the text */}
+        <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start justify-between -mt-[12vw] md:-mt-[10vw]">
+          
+          {/* Left Cards */}
+          <div className="w-full md:w-1/3 flex flex-col items-center md:items-start pt-16 md:pt-[12vw] px-4 md:px-0 z-20">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="bg-white/95 backdrop-blur-sm rounded-2xl border border-gray-200 shadow-sm p-6 max-w-xs w-full"
+            >
+              <h3 className="text-xl font-bold text-black mb-2">Hello! I&apos;m Fathima Shaba.</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-4">
+                A Full Stack Developer focused on modern web experiences.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-gray-50 text-gray-700 text-[10px] uppercase font-bold rounded border border-gray-200">HTML & CSS</span>
+                <span className="px-3 py-1 bg-gray-50 text-gray-700 text-[10px] uppercase font-bold rounded border border-gray-200">JavaScript</span>
+                <span className="px-3 py-1 bg-gray-50 text-gray-700 text-[10px] uppercase font-bold rounded border border-gray-200">React</span>
+              </div>
+            </motion.div>
           </div>
+
+          {/* Center Portrait */}
+          <div className="w-full md:w-1/3 flex justify-center z-10 mt-8 md:mt-0">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="relative w-64 h-[22rem] md:w-80 md:h-[28rem] lg:w-[26rem] lg:h-[34rem]"
+            >
+              {/* Using rounded-[10rem] to create a pill/oval portrait look that acts like a nice cutout alternative */}
+              <img 
+                src="/shaba.jpeg" 
+                alt="Fathima Shaba" 
+                className="w-full h-full object-cover rounded-[10rem] border-8 border-white shadow-xl"
+              />
+            </motion.div>
+          </div>
+
+          {/* Right Cards */}
+          <div className="w-full md:w-1/3 flex flex-col gap-4 items-center md:items-end pt-12 md:pt-[14vw] px-4 md:px-0 z-20">
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="bg-white/95 backdrop-blur-sm rounded-2xl border border-gray-200 shadow-sm p-5 w-full max-w-[16rem] flex items-center gap-4"
+            >
+              <h4 className="text-4xl font-black text-black leading-none">100<span className="text-orange-500 text-2xl">%</span></h4>
+              <p className="text-[10px] text-gray-500 font-bold uppercase leading-tight">Client<br/>Satisfaction</p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.1 }}
+              className="bg-white/95 backdrop-blur-sm rounded-2xl border border-gray-200 shadow-sm p-5 w-full max-w-[16rem] flex items-center gap-4"
+            >
+              <h4 className="text-4xl font-black text-black leading-none">10<span className="text-orange-500 text-2xl">+</span></h4>
+              <p className="text-[10px] text-gray-500 font-bold uppercase leading-tight">Projects<br/>Launched</p>
+            </motion.div>
+          </div>
+
         </div>
-        
+
+        {/* Center Message Beneath Portrait */}
+        <div className="relative z-30 w-full flex justify-center mt-12 md:mt-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-gray-50 rounded-[2rem] border border-gray-200 px-8 py-10 md:py-12 text-center max-w-3xl w-full mx-4"
+          >
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-black uppercase tracking-tight leading-tight mb-8">
+              Design, branding and <br className="hidden sm:block"/> web development made better.
+            </h2>
+            <a href="#projects" className="inline-flex items-center justify-center px-10 py-4 bg-black text-white text-xs font-black uppercase tracking-widest rounded-full hover:bg-gray-800 transition-colors shadow-lg shadow-black/20">
+              View Projects
+            </a>
+          </motion.div>
+        </div>
+
       </div>
     </section>
   );

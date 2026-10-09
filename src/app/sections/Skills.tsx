@@ -1,39 +1,41 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { SKILLS } from "@/app/constants";
 
 export default function SkillsSection() {
-  const skills = [
-    { num: "01", title: "Frontend Architecture", desc: "From “we have an idea” to flows, prototypes and systems ready to grow." },
-    { num: "02", title: "Brand & Art Direction", desc: "Identities with a point of view, built to be recognized, remembered and used." },
-    { num: "03", title: "UX | UI", desc: "Clear interfaces for real behavior, weird edge cases and every screen in between." },
-    { num: "04", title: "Motion & Polish", desc: "Motion and polish that explain, elevate and occasionally steal the show." }
-  ];
-
   return (
-    <section className="w-full inverted-section py-24 px-6 md:px-12 lg:px-24" id="skills">
-      <div className="max-w-[1600px] mx-auto">
-        <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-text-default mb-16 uppercase">Skillset</h2>
+    <section className="bg-white py-24" id="skills">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        <div className="flex flex-col border-t border-border-default">
-          {skills.map((skill, index) => (
-            <div key={index} className="flex flex-col md:flex-row md:items-start py-8 md:py-12 border-b border-border-default group hover:pl-4 transition-all duration-300">
-              <div className="md:w-1/4 mb-4 md:mb-0">
-                <span className="text-sm font-bold text-accent">{skill.num}</span>
-              </div>
-              <div className="md:w-3/4 flex flex-col gap-4">
-                <h3 className="text-2xl md:text-3xl font-semibold text-text-default">{skill.title}</h3>
-                <p className="text-lg md:text-xl text-text-muted max-w-2xl font-light">
-                  {skill.desc}
-                </p>
-              </div>
-            </div>
-          ))}
+        <div className="flex flex-col md:flex-row gap-12 lg:gap-24 items-start">
+          
+          <div className="w-full md:w-1/3 sticky top-32">
+            <h2 className="text-3xl md:text-5xl font-black text-black uppercase tracking-tight">Technical<br/>Skills</h2>
+            <div className="w-12 h-1 bg-orange-500 mt-6 mb-6"></div>
+            <p className="text-gray-500 leading-relaxed">
+              I leverage a diverse set of modern technologies to build fast, scalable, and responsive digital products.
+            </p>
+          </div>
+
+          <div className="w-full md:w-2/3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            {SKILLS.map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                className="bg-gray-50 rounded-2xl border border-gray-100 p-6 flex flex-col items-center justify-center text-center hover:bg-white hover:shadow-md transition-all cursor-default"
+              >
+                <skill.icon className={`text-4xl mb-4 ${skill.color} grayscale hover:grayscale-0 transition-all`} />
+                <span className="text-sm font-bold text-black uppercase tracking-wide">{skill.name}</span>
+              </motion.div>
+            ))}
+          </div>
+
         </div>
-        
-        <p className="text-xl md:text-2xl text-text-muted max-w-4xl mt-16 font-light leading-relaxed">
-          Consistency, persistence, and visual problem solving that challenges perception and emotion.
-        </p>
+
       </div>
     </section>
   );
