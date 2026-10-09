@@ -2,57 +2,49 @@
 
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { ANIMATION_CONFIG, CONTACT_INFO } from "@/app/constants";
+import { CONTACT_INFO } from "@/app/constants";
 
 export default function ContactSection() {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: ANIMATION_CONFIG.pageTransition.duration }}
-      viewport={{ once: true }}
-      className="page"
-      id="contact"
-    >
-      <div className="section-header">
-        <span className="section-label">Connect</span>
-        <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Let&apos;s Talk</h2>
-      </div>
-      <p className="text-lg text-slate-700 dark:text-slate-300 mb-8 leading-relaxed">
-        If you&apos;re looking for a fullstack developer who crafts modern, polished web apps, let&apos;s connect.
-      </p>
-      <div className="grid md:grid-cols-3 gap-6">
-        {CONTACT_INFO.map((item) => (
-          <motion.a
-            key={item.label}
-            href={item.href}
-            whileHover={{ scale: ANIMATION_CONFIG.hoverScale }}
-            className="card flex items-start gap-4 cursor-pointer hover:bg-blue-50 dark:hover:bg-slate-700 transition"
-          >
-            <item.icon className="mt-1 text-2xl text-blue-600 dark:text-blue-400" />
-            <div className="min-w-0">
-              <p className="text-xs text-slate-600 dark:text-slate-400 uppercase font-semibold">{item.label}</p>
-              <p className="text-slate-900 dark:text-white font-semibold break-words">{item.value}</p>
+    <section className="mx-auto w-full max-w-[1600px]" id="contact">
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="relative flex flex-col items-start gap-cozy p-roomy border-t border-b border-border-default md:col-span-1">
+            <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
+            <p className="text-xs font-medium uppercase tracking-widest text-text-faint mb-2">Connect</p>
+            <h2 className="text-3xl font-semibold tracking-tight text-text-default mb-4">Let's Talk</h2>
+            <p className="text-base text-text-muted leading-relaxed mb-8 max-w-prose">
+              Looking for a frontend developer who crafts modern, polished web apps? Let's build something extraordinary together.
+            </p>
+            <div className="flex gap-4">
+              <a href="#" className="flex items-center gap-2 px-4 py-2 bg-text-default text-surface rounded-full text-sm font-semibold hover:bg-slate-200 transition-colors">
+                 <FaLinkedin /> LinkedIn
+              </a>
+              <a href="#" className="flex items-center gap-2 px-4 py-2 border border-border-strong rounded-full text-sm font-semibold hover:bg-white/5 transition-colors">
+                 <FaGithub /> GitHub
+              </a>
             </div>
-          </motion.a>
-        ))}
+        </div>
+        <div className="relative flex flex-col items-start gap-cozy p-roomy border-b md:border-t md:border-l border-border-default md:col-span-1">
+            <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
+            <p className="text-xs font-medium uppercase tracking-widest text-text-faint mb-4">Contact Info</p>
+            <ul className="flex flex-col gap-6 w-full">
+              {CONTACT_INFO.map((item, index) => (
+                <li key={index} className="flex flex-col gap-1 border-b border-border-default pb-6 last:border-b-0 last:pb-0">
+                  <span className="text-xs font-medium text-text-muted uppercase tracking-wider">{item.label}</span>
+                  <a href={item.href} className="text-lg font-semibold text-text-default hover:underline decoration-border-strong underline-offset-4">
+                    {item.value}
+                  </a>
+                </li>
+              ))}
+            </ul>
+        </div>
       </div>
-      <div className="flex gap-6 mt-8 justify-center">
-        <motion.a
-          href="#"
-          whileHover={{ scale: 1.2, rotate: 10 }}
-          className="text-3xl text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
-        >
-          <FaLinkedin />
-        </motion.a>
-        <motion.a
-          href="#"
-          whileHover={{ scale: 1.2, rotate: 10 }}
-          className="text-3xl text-slate-900 dark:text-slate-300 hover:text-slate-700 dark:hover:text-white"
-        >
-          <FaGithub />
-        </motion.a>
-      </div>
-    </motion.section>
+    </section>
   );
 }

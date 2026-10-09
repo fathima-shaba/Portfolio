@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Providers from "@/app/providers/ThemeProvider";
 
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+
 export const metadata: Metadata = {
-  title: "Fathima Shaba | Full Stack Developer",
-  description: "Portfolio of Fathima Shaba - Full stack developer building modern web experiences with React and Next.js",
+  title: "Fathima Shaba | Frontend Developer",
+  description: "Portfolio of Fathima Shaba - Frontend developer building modern web experiences with React and Next.js",
 };
 
 export default function RootLayout({
@@ -13,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+    <html lang="en" suppressHydrationWarning className={`${inter.variable}`}>
+      <body className="min-h-full flex flex-col bg-surface text-text-default font-sans antialiased">
         <Providers>{children}</Providers>
       </body>
     </html>

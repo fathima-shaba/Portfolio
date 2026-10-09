@@ -2,87 +2,103 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaReact, FaHtml5, FaCss3Alt, FaCode } from "react-icons/fa";
 
 export default function CoverPageSection() {
   const [photoSrc, setPhotoSrc] = useState("/profile.jpg");
 
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="page bg-gradient from-blue-600 via-purple-600 to-pink-600 dark:from-blue-900 dark:via-purple-900 dark:to-pink-900 text-white"
-    >
-      <div className="max-w-6xl mx-auto">
-        <div className="grid gap-10 lg:grid-cols-[1.7fr_1fr] items-center">
-          <div>
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-block uppercase tracking-widest text-sm font-bold text-white/80 mb-4"
-            >
-              Fullstack Developer
-            </motion.span>
-            <motion.h1
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-5xl md:text-6xl font-bold mb-6 leading-tight"
-            >
-              Hi, I&apos;m Fathima Shaba.
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="text-lg text-white/90 max-w-2xl leading-relaxed"
-            >
-              I build polished, animated web experiences with React, modern CSS, and clean, responsive interfaces for both dark and light mode.
-            </motion.p>
-          </div>
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45 }}
-            className="mx-auto max-w-sm"
-          >
-            <div className="rounded-[2rem] border border-white/20 bg-white/10 p-6 shadow-2xl backdrop-blur-xl">
-              <div className="w-full aspect-square overflow-hidden rounded-full border border-white/15 bg-slate-950">
+    <section className="relative mx-auto w-full max-w-widest overflow-hidden">
+      <div className="relative mx-auto grid max-w-[1600px] grid-cols-1 md:grid-cols-2 md:items-center">
+        <div className="relative aspect-square max-h-[960px] max-w-[960px] overflow-visible md:mx-auto md:w-full w-full md:order-2 border-t md:border-t-0 md:border-l border-border-default">
+           <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
+           <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
+           <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
+           <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
+           
+           <div className="absolute inset-0 flex items-center justify-center p-roomy">
+              <div className="w-full h-full rounded-full overflow-hidden border border-border-default/50">
                 <img
                   src={photoSrc}
                   alt="Profile"
                   onError={() => setPhotoSrc("/profile-placeholder.svg")}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-full filter grayscale hover:grayscale-0 transition-all duration-700"
                 />
               </div>
-            </div>
-          </motion.div>
+           </div>
         </div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.55 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10"
-        >
-          {[
-            { icon: FaReact, label: "React", desc: "Interactive frontend apps" },
-            { icon: FaHtml5, label: "HTML/CSS", desc: "Responsive layouts" },
-            { icon: FaCode, label: "Clean logic", desc: "Java, C, C++ foundations" },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.05 }}
-              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5"
-            >
-              <item.icon className="text-3xl mb-3" />
-              <strong className="block text-lg mb-1">{item.label}</strong>
-              <p className="text-sm text-white/80">{item.desc}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+
+        <div className="flex flex-col gap-roomy items-stretch relative z-10 p-roomy md:order-1 border-t md:border-t-0 border-border-default h-full justify-center">
+          <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
+          <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
+          <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
+          <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
+          
+          <div className="flex flex-col gap-snug items-stretch">
+            <p className="text-xs font-medium uppercase tracking-widest text-text-faint mb-4">
+              Frontend Developer
+            </p>
+            <h1 className="text-5xl md:text-7xl font-semibold tracking-tight xl:text-[6rem] leading-[1.1] text-text-default">
+              Fathima<br />Shaba
+            </h1>
+          </div>
+          <p className="text-lg md:text-xl max-w-prose leading-relaxed text-text-muted mt-6">
+            I build polished, animated web experiences with React, modern CSS, and clean, responsive interfaces. Passionate about bringing elegant designs to life.
+          </p>
+          <div className="flex flex-wrap gap-4 justify-start items-center mt-8">
+            <a href="mailto:fathimashaba674@gmail.com" className="btn-flat btn-flat-primary">
+              Let&apos;s talk
+            </a>
+            <a href="#about" className="btn-flat btn-flat-secondary">
+              View Work
+            </a>
+          </div>
+        </div>
       </div>
-    </motion.section>
+      
+      <div className="mx-auto w-full max-w-[1600px]">
+        <div className="grid grid-cols-2 md:grid-cols-4">
+          <div className="relative flex flex-col items-start gap-cozy p-roomy border-t border-border-default">
+            <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
+            <p className="min-h-[2lh] md:min-h-0 text-xs font-medium uppercase tracking-widest text-text-faint">Projects Built</p>
+            <p className="text-4xl md:text-5xl font-semibold tracking-tighter tabular-nums leading-none text-text-default">
+              15<span className="text-text-faint text-3xl ml-1">+</span>
+            </p>
+          </div>
+          <div className="relative flex flex-col items-start gap-cozy p-roomy border-t md:border-l border-border-default">
+            <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
+            <p className="min-h-[2lh] md:min-h-0 text-xs font-medium uppercase tracking-widest text-text-faint">Technologies</p>
+            <p className="text-4xl md:text-5xl font-semibold tracking-tighter tabular-nums leading-none text-text-default">
+              12<span className="text-text-faint text-3xl ml-1">+</span>
+            </p>
+          </div>
+          <div className="relative flex flex-col items-start gap-cozy p-roomy border-t md:border-l border-border-default">
+            <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
+            <p className="min-h-[2lh] md:min-h-0 text-xs font-medium uppercase tracking-widest text-text-faint">Code Commits</p>
+            <p className="text-4xl md:text-5xl font-semibold tracking-tighter tabular-nums leading-none text-text-default">
+              500<span className="text-text-faint text-3xl ml-1">+</span>
+            </p>
+          </div>
+          <div className="relative flex flex-col items-start gap-cozy p-roomy border-t md:border-l border-border-default">
+            <span aria-hidden="true" className="pointer-events-none absolute top-0 left-0 border-t border-l w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute top-0 right-0 border-t border-r w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 border-b border-l w-3 h-3 border-border-default"></span>
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 border-b border-r w-3 h-3 border-border-default"></span>
+            <p className="min-h-[2lh] md:min-h-0 text-xs font-medium uppercase tracking-widest text-text-faint">Passion</p>
+            <p className="text-4xl md:text-5xl font-semibold tracking-tighter tabular-nums leading-none text-text-default">
+              100<span className="text-text-faint text-3xl ml-1">%</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

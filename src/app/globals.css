@@ -5,32 +5,42 @@
 @layer base {
   html {
     @apply scroll-smooth;
+    color-scheme: dark;
   }
 
   body {
-    @apply bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300;
+    @apply bg-surface text-text-default font-sans antialiased min-h-screen flex flex-col overflow-x-hidden;
+  }
+
+  ::selection {
+    @apply bg-text-default text-surface;
+  }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  
+  .glass-panel {
+    @apply bg-surface/50 backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-300 to-slate-500;
   }
 }
 
 @layer components {
-  .page {
-    @apply w-full max-w-4xl mx-auto bg-white dark:bg-slate-900 rounded-3xl p-9 shadow-2xl dark:shadow-2xl dark:shadow-slate-900/50 my-8 transition-colors;
+  .btn-flat {
+    @apply inline-flex items-center justify-center rounded-field font-semibold cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface h-12 px-6 text-sm gap-snug;
   }
-
-  .section-header {
-    @apply flex flex-wrap items-center gap-4 mb-6;
+  .btn-flat-primary {
+    @apply bg-text-default text-surface hover:bg-slate-200 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105;
   }
-
-  .section-label {
-    @apply inline-flex items-center justify-center px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 text-xs font-bold uppercase tracking-wide transition-colors;
-  }
-
-  .card {
-    @apply bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 transition-colors;
-  }
-
-  .skill-tag {
-    @apply inline-flex items-center justify-center px-4 py-3 rounded-full bg-blue-100 dark:bg-blue-950/50 text-blue-900 dark:text-blue-200 font-bold text-sm transition-colors;
+  .btn-flat-secondary {
+    @apply bg-transparent text-text-default border border-border-strong hover:bg-white/5 hover:border-white/20 hover:scale-105;
   }
 }
-
