@@ -20,10 +20,10 @@ export default function CoverPageSection() {
         </div>
 
         {/* Main Content Layout overlapping the text */}
-        <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start justify-between -mt-[12vw] md:-mt-[10vw]">
+        <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start justify-between mt-4 md:-mt-[10vw] gap-8 md:gap-0">
           
           {/* Left Cards */}
-          <div className="w-full md:w-1/3 flex flex-col items-center md:items-start pt-16 md:pt-[12vw] px-4 md:px-0 z-20">
+          <div className="w-full md:w-1/3 flex flex-col items-center md:items-start pt-0 md:pt-[12vw] px-4 md:px-0 z-20 order-2 md:order-1">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -44,11 +44,11 @@ export default function CoverPageSection() {
           </div>
 
           {/* Center Portrait */}
-          <div className="w-full md:w-1/3 flex justify-center z-10 mt-8 md:mt-0">
+          <div className="w-full md:w-1/3 flex justify-center z-10 order-1 md:order-2 mt-8 md:mt-0">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="relative w-64 h-[22rem] md:w-80 md:h-[28rem] lg:w-[26rem] lg:h-[34rem] flex items-center justify-center"
+              className="relative w-56 h-[18rem] sm:w-64 sm:h-[22rem] md:w-80 md:h-[28rem] lg:w-[26rem] lg:h-[34rem] flex items-center justify-center"
             >
               {/* Soft Background Glow Behind Image */}
               <div className="absolute inset-4 bg-cyan-400/20 dark:bg-cyan-500/20 blur-3xl rounded-[10rem]"></div>
@@ -88,7 +88,7 @@ export default function CoverPageSection() {
           </div>
 
           {/* Right Cards */}
-          <div className="w-full md:w-1/3 flex flex-col gap-4 items-center md:items-end pt-12 md:pt-[14vw] px-4 md:px-0 z-20">
+          <div className="w-full md:w-1/3 flex flex-col gap-4 items-center md:items-end pt-0 md:pt-[14vw] px-4 md:px-0 z-20 order-3 md:order-3">
             <motion.div 
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
