@@ -2,10 +2,16 @@
 
 import Link from "next/link";
 import { NAVIGATION_ITEMS } from "@/app/constants";
+import { motion } from "framer-motion";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
+    <motion.header 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      className="sticky top-0 z-50 bg-white border-b border-gray-100"
+    >
       <div className="mx-auto flex justify-between items-center h-20 px-6 md:px-12 lg:px-24">
         
         {/* Left: Name */}
@@ -30,12 +36,14 @@ export default function Header() {
         
         {/* Right: Resume Button & Mobile Menu */}
         <div className="flex items-center gap-4">
-          <a
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             href="/resume.pdf"
             className="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-white bg-black rounded hover:bg-gray-800 transition-colors"
           >
             Download Resume
-          </a>
+          </motion.a>
           
           <button className="lg:hidden flex flex-col gap-1.5 p-2">
             <span className="w-6 h-0.5 bg-black block"></span>
@@ -43,6 +51,6 @@ export default function Header() {
           </button>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }

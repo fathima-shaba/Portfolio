@@ -24,9 +24,10 @@ export default function SkillsSection() {
                 key={skill.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.05, y: -5 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="bg-gray-50 rounded-2xl border border-gray-100 p-6 flex flex-col items-center justify-center text-center hover:bg-white hover:shadow-md transition-all cursor-default"
+                transition={{ delay: index * 0.05, duration: 0.2 }}
+                className="bg-gray-50 rounded-2xl border border-gray-100 p-6 flex flex-col items-center justify-center text-center hover:bg-white hover:shadow-lg transition-colors cursor-pointer"
               >
                 <skill.icon className={`text-4xl mb-4 ${skill.color} grayscale hover:grayscale-0 transition-all`} />
                 <span className="text-sm font-bold text-black uppercase tracking-wide">{skill.name}</span>

@@ -16,8 +16,10 @@ export default function EducationSection() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.02, boxShadow: "0 10px 30px -10px rgba(0,0,0,0.1)" }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
+            className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 cursor-pointer"
           >
             <div>
               <p className="text-xs font-bold text-orange-500 uppercase tracking-widest mb-2">2021 - 2024</p>

@@ -9,9 +9,14 @@ export default function CoverPageSection() {
         
         {/* HUGE "DEVELOPER" Heading */}
         <div className="w-full text-center relative z-0 flex justify-center">
-          <h1 className="text-[16vw] md:text-[14vw] font-black tracking-tighter text-black uppercase leading-none select-none">
+          <motion.h1 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-[16vw] md:text-[14vw] font-black tracking-tighter text-black uppercase leading-none select-none"
+          >
             DEVELOPER
-          </h1>
+          </motion.h1>
         </div>
 
         {/* Main Content Layout overlapping the text */}
@@ -22,7 +27,9 @@ export default function CoverPageSection() {
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="bg-white/95 backdrop-blur-sm rounded-2xl border border-gray-200 shadow-sm p-6 max-w-xs w-full"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white/95 backdrop-blur-sm rounded-2xl border border-gray-200 shadow-sm p-6 max-w-xs w-full cursor-pointer"
             >
               <h3 className="text-xl font-bold text-black mb-2">Hello! I&apos;m Fathima Shaba.</h3>
               <p className="text-sm text-gray-500 leading-relaxed mb-4">
@@ -57,7 +64,9 @@ export default function CoverPageSection() {
             <motion.div 
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="bg-white/95 backdrop-blur-sm rounded-2xl border border-gray-200 shadow-sm p-5 w-full max-w-[16rem] flex items-center gap-4"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white/95 backdrop-blur-sm rounded-2xl border border-gray-200 shadow-sm p-5 w-full max-w-[16rem] flex items-center gap-4 cursor-pointer"
             >
               <h4 className="text-4xl font-black text-black leading-none">100<span className="text-orange-500 text-2xl">%</span></h4>
               <p className="text-[10px] text-gray-500 font-bold uppercase leading-tight">Client<br/>Satisfaction</p>
@@ -66,8 +75,9 @@ export default function CoverPageSection() {
             <motion.div 
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 }}
-              className="bg-white/95 backdrop-blur-sm rounded-2xl border border-gray-200 shadow-sm p-5 w-full max-w-[16rem] flex items-center gap-4"
+              whileHover={{ scale: 1.05 }}
+              transition={{ delay: 0.1, duration: 0.3 }}
+              className="bg-white/95 backdrop-blur-sm rounded-2xl border border-gray-200 shadow-sm p-5 w-full max-w-[16rem] flex items-center gap-4 cursor-pointer"
             >
               <h4 className="text-4xl font-black text-black leading-none">10<span className="text-orange-500 text-2xl">+</span></h4>
               <p className="text-[10px] text-gray-500 font-bold uppercase leading-tight">Projects<br/>Launched</p>
@@ -86,9 +96,14 @@ export default function CoverPageSection() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-black uppercase tracking-tight leading-tight mb-8">
               Design, branding and <br className="hidden sm:block"/> web development made better.
             </h2>
-            <a href="#projects" className="inline-flex items-center justify-center px-10 py-4 bg-black text-white text-xs font-black uppercase tracking-widest rounded-full hover:bg-gray-800 transition-colors shadow-lg shadow-black/20">
+            <motion.a 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="#projects" 
+              className="inline-flex items-center justify-center px-10 py-4 bg-black text-white text-xs font-black uppercase tracking-widest rounded-full hover:bg-gray-800 transition-colors shadow-lg shadow-black/20"
+            >
               View Projects
-            </a>
+            </motion.a>
           </motion.div>
         </div>
 
