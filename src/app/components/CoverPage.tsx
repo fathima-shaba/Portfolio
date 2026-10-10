@@ -9,7 +9,7 @@ export default function CoverPage() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="page bg-gradient from-blue-600 via-purple-600 to-pink-600 text-white"
+      className="page bg-gradient from-blue-600 via-purple-600 to-pink-600 text-zinc-900 dark:text-white"
     >
       <div className="max-w-4xl mx-auto">
         <div className="mb-12">
@@ -17,7 +17,7 @@ export default function CoverPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="inline-block uppercase tracking-widest text-sm font-bold text-white/80 mb-4"
+            className="inline-block uppercase tracking-widest text-sm font-bold text-zinc-900 dark:text-white/80 mb-4"
           >
             Digital Portfolio
           </motion.span>
@@ -33,7 +33,7 @@ export default function CoverPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-lg text-white/90 max-w-2xl leading-relaxed"
+            className="text-lg text-zinc-900 dark:text-white/90 max-w-2xl leading-relaxed"
           >
             I create polished, responsive user interfaces that help brands and projects feel confident, clear, and impactful.
           </motion.p>
@@ -56,7 +56,7 @@ export default function CoverPage() {
             >
               <item.icon className="text-3xl mb-3" />
               <strong className="block text-lg mb-1">{item.label}</strong>
-              <p className="text-sm text-white/80">{item.desc}</p>
+              <p className="text-sm text-zinc-900 dark:text-white/80">{item.desc}</p>
             </motion.div>
           ))}
         </motion.div>

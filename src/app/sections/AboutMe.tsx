@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function AboutMeSection() {
   return (
-    <section className="bg-white py-24" id="about">
+    <section className="bg-transparent py-24" id="about">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Centered bold uppercase paragraph */}
@@ -13,7 +13,7 @@ export default function AboutMeSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-4xl font-black text-black uppercase leading-snug tracking-tight"
+            className="text-2xl md:text-4xl font-black text-zinc-900 dark:text-white uppercase leading-snug tracking-tight"
           >
             I am a web developer focused on creating modern, responsive, and accessible web experiences. I build projects with care and attention to detail. I enjoy crafting interfaces, solving problems, and learning new technologies.
           </motion.h2>
@@ -44,17 +44,17 @@ export default function AboutMeSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8">
+              <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
                 I&apos;m a passionate full stack developer focused on creating modern, user-centered digital experiences. I blend creativity with clean, efficient code to build websites that are not only visually appealing but also functional, fast, and scalable.
               </p>
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8">
+              <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
                 With a strong computer science foundation from Calicut University, I combine technical expertise in React, JavaScript, HTML, CSS, Java, C, and C++ with a keen eye for minimalist design. Every layout, interaction, and line of code is crafted to deliver real value.
               </p>
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-12">
+              <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed mb-12">
                 From concept to launch, I work closely with clients to understand their goals, audience and brand vision. My collaborative approach ensures every project reflects the client&apos;s identity while meeting business objectives and performance standards.
               </p>
               
-              <a href="#contact" className="inline-block px-10 py-4 border-2 border-black text-black font-bold uppercase tracking-widest text-sm hover:bg-black hover:text-white transition-colors rounded-full">
+              <a href="#contact" className="inline-block px-10 py-4 border-2 border-cyan-500 text-cyan-500 dark:text-cyan-400 font-bold uppercase tracking-widest text-sm hover:bg-cyan-500 hover:text-zinc-950 transition-colors rounded-full">
                 Get In Touch
               </a>
             </motion.div>
