@@ -49,7 +49,7 @@ export default function CompanyContributionsSection() {
   ];
 
   return (
-    <section className="bg-transparent py-24 border-y border-zinc-200 dark:border-zinc-800" id="company-contributions">
+    <section className="bg-transparent py-24 border-y border-zinc-200 dark:border-zinc-800 overflow-hidden" id="company-contributions">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Title */}

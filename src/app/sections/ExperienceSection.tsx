@@ -31,7 +31,8 @@ export default function ExperienceSection() {
   ];
 
   return (
-    <section className="bg-transparent py-24 border-y border-zinc-200 dark:border-zinc-800" id="experience">
+    <section className="bg-transparent py-24 border-y border-zinc-200 dark:border-zinc-800 relative overflow-hidden" id="projects">
+      <div id="experience" className="absolute -top-24 pointer-events-none" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Title */}
